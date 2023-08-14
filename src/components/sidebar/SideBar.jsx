@@ -12,31 +12,12 @@ export default function ContentSeparator() {
         
         <Sidebar.ItemGroup className='sidebar_item_group'>
           <Sidebar.Logo
-        href="#"
-        img="/vite.svg"
-        imgAlt="Flowbite logo"
+        href="/"
       >
         <p>
           S.R. Ferros
         </p>
       </Sidebar.Logo>
-          <Sidebar.Collapse
-            icon={HiShoppingBag}
-            label="E-commerce"
-          >
-            <Sidebar.Item href="#">
-              Products
-            </Sidebar.Item>
-            <Sidebar.Item href="#">
-              Sales
-            </Sidebar.Item>
-            <Sidebar.Item href="#">
-              Refunds
-            </Sidebar.Item>
-            <Sidebar.Item href="#">
-              Shipping
-            </Sidebar.Item>
-          </Sidebar.Collapse>
           <Sidebar.Item
             href="/inventory"
             icon={HiViewBoards}
@@ -51,6 +32,30 @@ export default function ContentSeparator() {
           >
             <p>
               Billing
+            </p>
+          </Sidebar.Item>
+          <Sidebar.Item
+            href="/toll kanta"
+            icon={HiInbox}
+          >
+            <p>
+              Toll kanta
+            </p>
+          </Sidebar.Item>
+          <Sidebar.Item
+            href="/raiserequest"
+            icon={HiInbox}
+          >
+            <p>
+              Raise request
+            </p>
+          </Sidebar.Item>
+          <Sidebar.Item
+            href="/demandrequest"
+            icon={HiInbox}
+          >
+            <p>
+              Demand request
             </p>
           </Sidebar.Item>
         </Sidebar.ItemGroup>

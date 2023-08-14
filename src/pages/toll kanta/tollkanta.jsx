@@ -1,27 +1,22 @@
-
-import { Button } from "flowbite-react";
-import BillingTable from "./components/BillingTable";
-import { useSelector } from "react-redux";
-import { useState } from "react";
-import { Modal } from "flowbite-react";
-import Billingform from "../../components/forms/billingform";
-
-function BillingPage() {
-  const selectedPlant = useSelector((state)=>state.plant.plant)
-  const [openbill, setOpenbill] = useState();
-  const openbillform = () => {
-    setOpenbill('addbill');
+import React, { useState } from 'react'
+import { Button,Modal} from 'flowbite-react';
+import Kantatable from './components/kantatable';
+import Kantaform from '../../components/forms/kantaform';
+const Toll = () => {
+  const [openkanta, setOpenkanta] = useState();
+  const openkantaform = () => {
+    setOpenkanta('add');
   };
 
-  const closebillform = () => {
-    setOpenbill(undefined);
+  const closekantaform = () => {
+    setOpenkanta(undefined);
   };
-    return (
-    <div>
+  return (
+       <div>
     <div className="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700">
       <div className="w-full mb-1">
         <div className="mb-4">
-          <h1 className="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">All Bill <br></br> {selectedPlant}</h1>
+          <h1 className="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">All products</h1>
         </div>
         <div className="items-center justify-between block sm:flex md:divide-x md:divide-gray-100 dark:divide-gray-700">
           <div className="flex items-center mb-4 sm:mb-0">
@@ -54,7 +49,7 @@ function BillingPage() {
               </div>
             </div>
           </div>
-          <Button onClick={openbillform}> ADD BILL  </Button>
+          <Button onClick={openkantaform}> ADD </Button>
         </div>
       </div>
     </div>
@@ -62,30 +57,31 @@ function BillingPage() {
     <div className="overflow-auto">
         <div className="inline-block min-w-full align-middle">
             <div className="overflow-hidden shadow">
-                <BillingTable></BillingTable>
+                <Kantatable></Kantatable>
             </div>
         </div>
     </div>
 </div>
 <Modal
         dismissible
-        show={openbill === 'addbill'}
-        onClose={closebillform}
+        show={openkanta === 'add'}
+        onClose={closekantaform}
         className="modal_class rounded-lg shadow-md "
         style={{ overlay: { background: 'rgba(0, 0, 0, 0.5)' } }}
       >
-        <Modal.Header>Add Billing</Modal.Header>
+        <Modal.Header>Add details</Modal.Header>
         <Modal.Body>
 
-        <Billingform closeModal={closebillform} />
+        <Kantaform closeModal={closekantaform} />
         
         </Modal.Body>
         <Modal.Footer>
-          <Button className="w-full">Submit</Button>
         </Modal.Footer>
       </Modal>
-</div>
-  );
+    </div>
+    
+    
+  )
 }
 
-export default BillingPage
+export default Toll;

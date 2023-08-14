@@ -54,10 +54,6 @@ function InventoryPage() {
             </div>
           </div>
           <Button onClick={openAddProductModal}> ADD PRODUCT </Button>
-          {/* <button id="createProductButton" className="flex items-center text-white bg-blue-600 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-small rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800" type="button" data-drawer-target="drawer-create-product">
-            <svg className="-ml-0.5 mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
-            Create Product
-          </button> */}
         </div>
       </div>
     </div>

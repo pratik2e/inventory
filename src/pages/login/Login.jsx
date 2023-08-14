@@ -1,6 +1,6 @@
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
 
-export default function LoginPage() {
+const LoginPage = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-2xl font-bold mb-4">DEEP WES</h1>
@@ -45,3 +45,4 @@ export default function LoginPage() {
     </div>
   );
 }
+export default LoginPage;

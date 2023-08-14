@@ -1,6 +1,22 @@
-import { Table } from 'flowbite-react';
-// Bill No	Date	Party Name	Goods	Qty	Unit	Price	CGST	SGST	IGST	Round Off	Grand Total
+import { Table,Button } from 'flowbite-react';
 export default function BillingTable() {
+  const mockData = [
+    {
+      billNo: 'B123',
+      date: '2023-08-15',
+      partyName: 'ABC Corp',
+      goods: 'Apple MacBook Pro 17',
+      qty: '1',
+      unit: 'Laptop',
+      price: '$2999',
+      sgst: '6070',
+      cgst: '12312',
+      igst: '2223',
+      roundOff: '3000',
+      grandTotal: '$2999'
+    },
+    // Add more mock data items as needed
+  ];
   return (
     <Table hoverable className='overflow-x-auto'>
       <Table.Head>
@@ -40,47 +56,32 @@ export default function BillingTable() {
         <Table.HeadCell>
             Grand Total
         </Table.HeadCell>
-        <Table.HeadCell>
-          <span className="sr-only">
-            Edit
-          </span>
-        </Table.HeadCell>
       </Table.Head>
       <Table.Body className="divide-y">
-        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-          <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-            Apple MacBook Pro 17
-          </Table.Cell>
-          <Table.Cell>
-            Sliver
-          </Table.Cell>
-          <Table.Cell>
-            Laptop
-          </Table.Cell>
-          <Table.Cell>
-            $2999
-          </Table.Cell>
-          <Table.Cell>
-            $2999
-          </Table.Cell>
-          <Table.Cell>
-            $2999
-          </Table.Cell>
-          <Table.Cell>
-            $2999
-          </Table.Cell>
-          <Table.Cell>
-            <a
-              className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-              href="/tables"
-            >
-              <p>
-                Edit
-              </p>
-            </a>
-          </Table.Cell>
-        </Table.Row>
-       
+        {mockData.map((data, index) => (
+          <Table.Row key={index} className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              {data.billNo}
+            </Table.Cell>
+            <Table.Cell>{data.date}</Table.Cell>
+            <Table.Cell>{data.partyName}</Table.Cell>
+            <Table.Cell>{data.goods}</Table.Cell>
+            <Table.Cell>{data.qty}</Table.Cell>
+            <Table.Cell>{data.unit}</Table.Cell>
+            <Table.Cell>{data.price}</Table.Cell>
+            <Table.Cell>{data.sgst}</Table.Cell>
+            <Table.Cell>{data.cgst}</Table.Cell>
+            <Table.Cell>{data.igst}</Table.Cell>
+            <Table.Cell>{data.roundOff}</Table.Cell>
+            <Table.Cell>{data.grandTotal}</Table.Cell>
+            <Table.Cell>
+              {/* File Upload Button */}
+              <form>
+                <input type="file" />
+              </form>
+            </Table.Cell>
+          </Table.Row>
+        ))}
       </Table.Body>
     </Table>
   )
