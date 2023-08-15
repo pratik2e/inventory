@@ -1,4 +1,6 @@
-import { Table,Button } from 'flowbite-react';
+import React from 'react';
+import { Table,Button} from 'flowbite-react';
+import { Dropdown } from 'flowbite-react';
 export default function BillingTable() {
   const mockData = [
     {
@@ -75,10 +77,15 @@ export default function BillingTable() {
             <Table.Cell>{data.roundOff}</Table.Cell>
             <Table.Cell>{data.grandTotal}</Table.Cell>
             <Table.Cell>
-              {/* File Upload Button */}
-              <form>
-                <input type="file" />
-              </form>
+            <Dropdown>
+                <Dropdown.Trigger>
+                  <Button icon="more_horizontal" className="text-gray-700 dark:text-white" />
+                </Dropdown.Trigger>
+                <Dropdown.Menu>
+                  <Dropdown.Item>Edit</Dropdown.Item>
+                  <Dropdown.Item>Delete</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
             </Table.Cell>
           </Table.Row>
         ))}

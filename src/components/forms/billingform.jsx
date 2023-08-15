@@ -114,9 +114,17 @@ export default function Billingform() {
           required
         />
       </div>
-      {/* <Button type="submit" className="w-full">
-        Submit
-      </Button> */}
+      <div className="mb-4">
+        <Label htmlFor="fileUpload"/>
+        <input
+          type="file"
+          id="fileUpload"
+          name="fileUpload"
+          accept=".pdf, .doc, .docx"
+          className="border rounded-lg px-3 py-2"
+          required
+        />
+      </div>
     </form>
   );
 }
