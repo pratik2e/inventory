@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Table } from 'flowbite-react';
-export default function Raise  () {
+export default function Repair  () {
   const [inventoryData, setInventoryData] = useState([
       {
         itemName: "Apple MacBook Pro 17",

@@ -3,8 +3,9 @@ import BillingPage from './pages/billings/billing';
 import InventoryPage from '../src/pages/inventory/Inventory';
 import  Toll from '../src/pages/toll kanta/tollkanta.jsx'
 import LoginPage from '../src/pages/login/Login.jsx'
-import Raise from './pages/raiserequest/raise';
+import Repair from './pages/repair request/raise';
 import Demand from './pages/demandrequest/demand';
+import Signup from './pages/login/signup';
 
 function MyRoutes() {
   return (
@@ -14,7 +15,9 @@ function MyRoutes() {
         <Route path="/toll kanta" element={<Toll/>}/>
         <Route path="/login" element={<LoginPage/>}/>
         <Route path="/demandrequest" element={<Demand/>}/>
-        <Route path="/raiserequest" element={<Raise/>}/>
+        <Route path="/repairrequest" element={<Repair/>}/>
+        <Route path="/signup" element={<Signup/>}/>
+
     </Routes>
   )
 }
